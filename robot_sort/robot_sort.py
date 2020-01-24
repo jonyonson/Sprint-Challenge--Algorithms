@@ -98,13 +98,14 @@ class SortingRobot:
         """
         Sort the robot's list.
         """
+        # swapped = True
         self.set_light_on()
 
+        # while swapped
         while self.light_is_on():
+            # swapped == False
             self.set_light_off()
             while self.can_move_right():
-                # print(self._item)
-                # print(self._position)
                 self.swap_item()
                 self.move_right()
                 if self.compare_item() > 0:
